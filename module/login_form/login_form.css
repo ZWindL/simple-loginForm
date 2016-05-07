@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+.id_info{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: #636;
+    box-shadow: 0 0 .6rem #939393;
+    position: fixed;
+    right: 1rem;
+    top: 3rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .5s;
+}
+    .id_info:hover {
+        background: #2f96b4;
+    }
+    .id_info:active {
+        background: #003366;
+    }
+.id_info hr{
+    border: .2rem solid black;
+}
+.id_info_title{
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding-top:.5rem;
+    text-shadow: 0 0 .3rem #333;
+    display: block;
+    height: 2.5rem;
+    width: 6rem;
+    text-align: center;
+    line-height: 2.5rem;
+}
+.id_info_content{
+    height: 3.5rem;
+    width: 6rem;
+    text-align: center;
+    padding-top: .3rem;
+    color: white;
+}
+
+/* 登陆框样式 */
+.login_form, .login_form_loged{
+    z-index: 1;
+    width: 10rem;
+    border-radius: 2rem 0 2rem 2rem;
+    display: none;
+    background: black;
+    box-shadow: 0 0 1.4rem #CCC;
+}
+.login_form {
+    height: 13rem;
+}
+.login_form_loged {
+    height: 9rem;
+}
+    .login_form_loged a {
+        display: block;
+        width: 100%;
+        height: 2rem;
+        line-height:2rem;
+        text-align: center;
+        text-decoration: none;
+        background: transparent;
+        color: #FFF;
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+    .login_form_loged a:hover {
+        background: #FFF;
+        color: #000;
+    }
+.login_form_top_line {
+    height: .3rem;
+    width: 0;
+    background: black;
+}
+.login_form_content {
+    width: 10rem;
+    padding-top: 2rem;
+}
+.login_form .login_form_content {
+    height: 11rem;
+}
+.login_form_loged .login_form_content{
+    height: 7rem;
+}
+
+.login_form_content>div {
+    margin: 0.2rem 0;
+    height: 2rem;
+}
+.login_form_content .ipt {
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    border:none;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding-left: .5rem;
+    transition: all .5s;
+    background: transparent;
+    color: white;
+}
+.login_form_content .ipt:hover {
+    border-color: white;
+}
+.login_form_content .ipt:focus {
+    border-color: white;
+}
+.login_form_content .ipt_check_code {
+    width: 50%;
+    float: left;
+}
+.login_form_content .buttons_container{
+    padding-left: 1rem;
+}
+.login_form_content .buttons{
+    width: 40%;
+    margin: 0 .2rem;
+    float: left;
+}
+.login_form_content .check_code {
+    width: 47%;
+    float: left;
+    height: 2rem;
+    background: white;
+}
+.login_form_content .buttons {
+    height: 2rem;
+    border: 1px solid #000;
+    border-radius: .6rem;
+    background: #333;
+    transition: all .5s;
+    color: #98F;
+}
+.login_form_content .buttons:hover{
+    background: rebeccapurple;
+    border: none;
+    color: white;
+    border-radius: 0;
+}
+.login_form_slideup {
+    text-align: center;
+    cursor: pointer;
+}
+.login_form_slideup .slideup_arrow {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-bottom: 1rem solid  #ccc;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+}
+.login_form_slideup .slideup_arrow_mask{
+    margin:auto;
+    margin-top: -0.5rem;
+    width: 0;
+    height: 0;
+    border-bottom: .5rem solid black;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+}
+.login_form_slideup:hover .slideup_arrow {
+    border-bottom: 1rem solid  white;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+}

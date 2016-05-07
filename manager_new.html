@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <style>
+        main  {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="module/login_form/login_form.css">
+    <script src="module/login_form/login_form.js"></script>
+
+    <script>
+        $(function () {
+            function submit() { return false; }
+            function login() { console.log('Login clicked'); }
+            function reg() { console.log('reg button clicked'); }
+            $('.id_info').PopUpLoginForm('login',submit,login,reg)
+            $('#reg_form').submit(function () { return false; })
+        });
+    </script>
+</head>
+<body>
+    <header>
+		<div class="id_info"></div>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>
