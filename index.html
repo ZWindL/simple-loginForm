@@ -2,15 +2,114 @@
 <!--suppress ALL -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Demo</title>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Vim/7.4">
+    <meta name="plugin-version" content="vim7.4_v2">
+    <meta name="syntax" content="javascript">
+    <meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+    <meta name="colorscheme" content="molokai">
     <link rel="stylesheet" href="style/reset.css">
+    <style type="text/css">
+        <!--
+        pre { white-space: pre-wrap; font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
+        body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
+        * { font-size: 1em; }
+        .Function { color: #a6e22e; }
+        .String { color: #e6db74; }
+        .Identifier { color: #fd971f; }
+        .LineNr { color: #465457; background-color: #232526; padding-bottom: 1px; }
+        .Statement { color: #f92672; font-weight: bold; }
+        .Type { color: #66d9ef; }
+        .Comment { color: #7e8e91; }
+        .String { color: #e6db74; }
+        -->
+    </style>
     <style>
         main  {
-            width: 100%;
-            height: 100vh;
+            width: 50rem;
+            min-height: 100vh;
+            margin: auto;
+            margin-top: 6rem;
+        }
+        #try{
+            width: 4rem;
+            height: 2rem;
+            line-height: 2rem;
+            color:white;
+            background: black;
+            text-align:center;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 1rem #CCC;
+            transition: all .3s;
+        }
+        #try:hover{
+            background: #333;
+            box-shadow: 0 0 1.5rem white;
+        }
+        .hint {
+            width: 50rem;
+            height: auto;
+            margin-top: 1rem;
+            line-height: 1.4rem;
+            color: white;
+            font-size: 1em;
+            padding: .5rem;
+            border: 1px solid white;
+            display:inline-table;
+            opacity: 0;
+            transition: all .5s;
+        }
+        #try:hover~.hint {
+            opacity: 1;
+        }
+        #try:active {
+            width: 3.5rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+        }
+        .forkme {
+            display: block;
+            float: left;
+            margin-left: 5rem;
+            text-decoration: none;
+            color: #66d9ef;
+            text-shadow: 0 0 5px white;
+            transition: all .3s;
+        }
+        .forkme:hover{
+            color:black;
+            text-shadow: 0 0 8px white;
         }
     </style>
+    <script type='text/javascript'>
+        <!--
+
+        /* function to open any folds containing a jumped-to line before jumping to it */
+        function JumpToLine()
+        {
+            var lineNum;
+            lineNum = window.location.hash;
+            lineNum = lineNum.substr(1); /* strip off '#' */
+
+            if (lineNum.indexOf('L') == -1) {
+                lineNum = 'L'+lineNum;
+            }
+            lineElem = document.getElementById(lineNum);
+            /* Always jump to new location even if the line was hidden inside a fold, or
+             * we corrected the raw number to a line ID.
+             */
+            if (lineElem) {
+                lineElem.scrollIntoView(true);
+            }
+            return true;
+        }
+        if ('onhashchange' in window) {
+            window.onhashchange = JumpToLine;
+        }
+
+        -->
+    </script>
     <script src="js/jquery.js"></script>
 
     <link rel="stylesheet" href="module/login_form/login_form.css">
@@ -28,9 +127,52 @@
 </head>
 <body>
     <header>
-		<div class="id_info"></div>
+		<div class="id_info">Please SignIn</div>
     </header>
-    <main></main>
+    <main>
+		<h1>A small and light weight Login Form</h1>
+        <br><br>
+        <h2>HowTo:</h2>
+		<div onload="JumpToLine()">
+            To create this widget, just write a div block and put these code below in you <b>script</b> tag<br>
+            <pre id='vimCodeElement1'>
+                <span id="L1" class="LineNr">1 </span><span class="Function">&lt;</span><span class="Statement">div</span><span class="Function"> </span><span class="Type">class</span><span class="Function">=</span><span class="String">'id'</span><span class="Function">&gt;</span>Admin<span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+            </pre>
+            <pre id='vimCodeElement2'>
+                <span id="L1" class="LineNr">1 </span>$(<span class="Function">function</span>()<span class="Function">{</span>
+                <span id="L2" class="LineNr">2 </span>    $(<span class="String">'.login'</span>).PopUpLoginForm(<span class="String">'login'</span>,submit,login,reg);
+                <span id="L3" class="LineNr">3 </span>    <span class="Comment">// It has four arguments </span>
+                <span id="L4" class="LineNr">4 </span>    <span class="Comment">//first arg is a string, means the form is a </span>
+                <span id="L5" class="LineNr">5 </span>    <span class="Comment">//login form or it's a form that </span>
+                <span id="L6" class="LineNr">6 </span>    <span class="Comment">// someone has already logged in ('loged')</span>
+                <span id="L7" class="LineNr">7 </span>    <span class="Comment">// The orthers are callback function, each of them means the</span>
+                <span id="L8" class="LineNr">8 </span>    <span class="Comment">// function to load when events triggered</span>
+                <span id="L9" class="LineNr">9 </span><span class="Function">}</span>)
+            </pre>
+            <h2>Try it yourself</h2>
+            <pre id='vimCodeElement3'>
+                <span id="L1" class="LineNr">1 </span><span class="Function">&lt;</span><span class="Statement">div</span><span class="Function"> </span><span class="Type">class</span><span class="Function">=</span><span class="String">'id'</span><span class="Function">&gt;</span>User01<span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+            </pre>
+            <pre id='vimCodeElement4'>
+                <span id="L1" class="LineNr">1 </span>$(<span class="Function">function</span>()<span class="Function">{</span>
+                <span id="L2" class="LineNr">2 </span>    $(<span class="String">'.login'</span>).PopUpLoginForm(<span class="String">'loged'</span>);
+                <span id="L9" class="LineNr">9 </span><span class="Function">}</span>)
+            </pre>
+            <button id="try">Try</button>
+            <span class="hint">This will clear the old login form and create a new one, you should do it yourself in your own project</span>
+            <a class="forkme" href="https://github.com/ZWindL/simple-loginForm">Fork me on github</a>
+            <script>
+                $(function () {
+                    $('#try').click(function () {
+                        $('header').empty();
+                        var str = "<div class='loged_form'>User01</div>";
+                        $('header').append(str);
+                        $('.loged_form').PopUpLoginForm('loged');
+                    });
+                })
+            </script>
+        </div>
+	</main>
     <footer></footer>
 </body>
 </html>
